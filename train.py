@@ -1,13 +1,11 @@
 import numpy as np
-import  sys
-
+import sys
 from keras.datasets import cifar10
 from keras.models import Model
 from keras.layers import Input, Conv2D, Dense, Flatten, MaxPool2D, Dropout,BatchNormalization
 from keras.utils import np_utils, plot_model
 from keras.callbacks import EarlyStopping
 from keras.callbacks import TensorBoard
-
 
 
 if len(sys.argv)>1 :
@@ -28,7 +26,7 @@ drop_prob_3 = 0.3
 drop_prob_4 = 0.4
 drop_prob_5 = 0.5
 
-tensorboard = TensorBoard(log_dir='./logs', write_graph=True)
+#tensorboard = TensorBoard(log_dir='./logs', write_graph=True)
 
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 
@@ -89,5 +87,5 @@ print(model.summary())
 input()
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=num_epochs, verbose=1, validation_split=0.1
-		  , callbacks=[EarlyStopping(monitor='val_loss', patience=1), tensorboard])
+		  , callbacks=[EarlyStopping(monitor='val_loss', patience=1)])
 #model.save ('/home/drew/PycharmProjects/cnn_cifar10/models/model.h5')

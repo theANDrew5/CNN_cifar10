@@ -10,23 +10,23 @@ from keras.callbacks import TensorBoard
 
 
 
-if len(sys.argv)>1 :
-	batch_size = int(sys.argv[1])
-	num_epochs = int(sys.argv[2])
-else:
-	batch_size = 8
-	num_epochs = 1
-kernel_size = 3
-kernel_size_1 = 1
-pool_size =3
-conv_depth_1 = 96
-conv_depth_2 = 192
-conv_depth_3 = 10
-drop_prob_1 = 0.1
-drop_prob_2 = 0.2
-drop_prob_3 = 0.3
-drop_prob_4 = 0.4
-drop_prob_5 = 0.5
+# if len(sys.argv)>1 :
+# 	batch_size = int(sys.argv[1])
+# 	num_epochs = int(sys.argv[2])
+# else:
+# 	batch_size = 8
+# 	num_epochs = 1
+# kernel_size = 3
+# kernel_size_1 = 1
+# pool_size =3
+# conv_depth_1 = 96
+# conv_depth_2 = 192
+# conv_depth_3 = 10
+# drop_prob_1 = 0.1
+# drop_prob_2 = 0.2
+# drop_prob_3 = 0.3
+# drop_prob_4 = 0.4
+# drop_prob_5 = 0.5
 
 tensorboard = TensorBoard(log_dir='./logs', write_graph=True)
 
@@ -84,7 +84,7 @@ Y_test = np_utils.to_categorical(y_test, num_classes)
 
 #model = Model(input=inp, output=out)
 
-model = load_model('/home/drew/PycharmProjects/cnn_cifar10/models/model.h5')
+model = load_model(str(sys.argv[1]))
 plot_model(model, to_file='./graph_logs/model_structure.png', show_shapes=True)
 print(model.summary())
 input()
