@@ -17,9 +17,16 @@
 
 Обучение:
 
-$ python3 test.py <batch_size> <num_epochs>
+$ python3 train.py <batch_size> <num_epochs>
 
 <batch_size> - размер батча;
 
 <num_epochs> - количество эпох обучения;
+
+Тестирование:
+
+$ python3 test.py <path_to_model>
+
+<path_to_model> - путь к модели;
+
 
