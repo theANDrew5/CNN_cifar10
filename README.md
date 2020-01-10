@@ -39,4 +39,3 @@ tensorboard --logdir=</path/to/logs>
 
 Просмотр: http://localhost:6006/
 
-zdfx
